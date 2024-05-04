@@ -1,0 +1,17 @@
+= Pico Development Toolbox - Commnands
+
+Build the container image:
+    podman build . -t darranl/pico-development-toolbox:latest
+
+Remove existing toolbox:
+    toolbox rm -f pico-development
+
+Create new toolbox:
+    toolbox create pico-development -i localhost/darranl/pico-development-toolbox:latest
+
+Start the toolbox and the SSH server:
+    podman start pico-development
+    toolbox run --container pico-development sudo /usr/sbin/sshd -D
+
+
+
