@@ -1,4 +1,4 @@
-FROM fedora-toolbox:40
+FROM fedora-toolbox:41
 MAINTAINER Darran Lofthouse darran@lofthouse.me.uk
 
 RUN dnf -y upgrade
@@ -9,7 +9,8 @@ RUN dnf -y install openssh-server && \
 	&& /usr/libexec/openssh/sshd-keygen ecdsa \
 	&& /usr/libexec/openssh/sshd-keygen ed25519
 
-RUN dnf -y group install "C Development Tools and Libraries" "Development Tools" 
+RUN dnf -y group install c-development development-tools
+#RUN dnf -y group install "C Development Tools and Libraries" "Development Tools" 
 RUN dnf -y install \
         tmux \
         mc \
